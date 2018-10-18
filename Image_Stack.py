@@ -115,19 +115,19 @@ def stackImages(imageList):
 #End stackImages function
     
 # =============================================================================
-# Input file containing image ID numbers and angles to be rotated.
+# Input file containing Hubble field number image ID numbers and angles to be rotated.
 # =============================================================================
 """
-This section of the program reads in the user defined file that containes 
-image ID numbers and image angles and appends the data to lists for use in 
-rotating and stacking functions.
+This section of the program reads in the user defined file that containes
+Hubble field number, image ID numbers, and image angles and appends 
+the data to lists for use in rotating and stacking functions.
 
 FILE MUST BE .TXT FORMAT. 
 
-Additional lists can be declared and used depending on the need of the user
+Declared lists can be modified and used depending on the need of the user
 and format of user's input file. 
 """
-fields = []
+hubbleField = []
 imageIDs = []
 angles = []
 try:
@@ -135,7 +135,7 @@ try:
     angleFile = open('File_name_here.txt', 'r')
     for line in angleFile:
         #line.split functions seperates line text into columns.
-        fields.append(line.split()[0])
+        hubbleField.append(line.split()[0])
         imageIDs.append(line.split()[2])
         angles.append(line.split()[4])
     angleFile.close()
@@ -145,8 +145,8 @@ except IOError:
     
 objIdList = []
 imageAngles = []
-for i in range(0, len(fields)):
-    if (fields[i] == '8'):
+for i in range(0, len(hubbleField)):
+    if (hubbleField[i] == 'Enter_Hubble_Field_Number'):
         objIdList.append(imageIDs[i])
         imageAngles.append(angles[i])
         
