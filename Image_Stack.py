@@ -3,7 +3,7 @@
 Created on Wed Oct 17 14:30:00 2018
 
 @author: Matthew Peek
-@last Modified: 18 October 2018
+@last Modified: 4 November 2018
 Generic rotation and stacking program
 """
 import numpy as np
@@ -191,6 +191,9 @@ for i in range(1, len(ID)):
         objectAngle = float(0.0)
         if (ID[i] in objIdList):
             objectAngle = getRotationAngle(ID[i], objIdList)
+        
+        else:
+            print ("Object ID is not listed in angle text file")
                 
         """
         Call alignImages function and resize to stack.
